@@ -8,8 +8,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-mono: "Courier New", Courier, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +23,137 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.page {
+  max-width: 1120px;
+  margin: 32px auto;
+  padding: 0 16px;
+}
+
+.movies-page {
+  max-width: 1280px;
+}
+
+.movies-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.movies-header .actions {
+  justify-content: center;
+}
+
+.movie-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field label {
+  font-weight: 600;
+}
+
+.form-field input {
+  width: 100%;
+  max-width: 420px;
+  padding: 8px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  font: inherit;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin: 24px 0;
+}
+
+.filter label {
+  font-weight: 600;
+}
+
+.filter select {
+  width: 100%;
+  max-width: 260px;
+  padding: 8px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  font: inherit;
+}
+
+.form-error {
+  margin: 0;
+  color: #b00020;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+button {
+  width: fit-content;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.movie-item {
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-item h2 {
+  margin: 0 0 8px;
+}
+
+.movie-item p {
+  margin: 4px 0;
+}
+
+.movie-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+@media (max-width: 900px) {
+  .movie-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .movie-list {
+    grid-template-columns: 1fr;
+  }
 }
