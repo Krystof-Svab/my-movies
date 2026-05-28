@@ -12,6 +12,15 @@ Webova aplikace v Next.js App Routeru pro spravu filmu ulozenych v Supabase.
 - smazani filmu z detailu
 - formulare s `react-hook-form` a `Zod`
 
+## Technologie
+
+- Next.js App Router
+- Supabase databaze
+- `@supabase/supabase-js`
+- `react-hook-form`
+- `Zod`
+- responzivni CSS
+
 ## Spusteni projektu
 
 Nainstalujte zavislosti:
@@ -39,9 +48,12 @@ Aplikace pobezi na:
 http://localhost:3000
 ```
 
-## Supabase tabulka
+## Supabase nastaveni
 
-V Supabase vytvorte tabulku `movies` se sloupci:
+V Supabase vytvorte projekt a v SQL editoru spustte obsah souboru `supabase/schema.sql`.
+SQL vytvori tabulku `movies`, ukazkova data a policies pro verejne testovani skolni aplikace.
+
+Zakladni struktura tabulky:
 
 ```sql
 create table movies (
@@ -55,7 +67,10 @@ create table movies (
 );
 ```
 
-Pokud mate zapnute Row Level Security, pridejte policy pro cteni, vkladani, upravy a mazani pro `anon` uzivatele, nebo RLS pro skolni testovani vypnete.
+Po vytvoreni projektu doplnte do `.env.local` hodnoty z nastaveni Supabase:
+
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 
 ## Build
 
@@ -64,3 +79,22 @@ Pro kontrolu produkcniho buildu:
 ```bash
 npm run build
 ```
+
+Na Windows muze byt potreba spustit:
+
+```bash
+npm.cmd run build
+```
+
+## Struktura stran
+
+- `/` - uvodni stranka
+- `/movies` - seznam filmu a filtrovani podle zanru
+- `/movies/new` - pridani filmu
+- `/movies/[id]` - detail filmu
+- `/movies/[id]/edit` - uprava filmu
+
+## Odevzdani
+
+Odevzdava se odkaz na GitHub/GitLab repozitar a tento navod ke spusteni.
+Projekt je vyvijen ve feature vetvi `feature/movies-crud`; pro splneni Git casti vytvorte Pull Request do vetve `main`.
