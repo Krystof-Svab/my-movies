@@ -53,7 +53,7 @@ export default function MoviesPage() {
   return (
     <main className="page movies-page">
       <div className="movies-header">
-        <h1>Filmy</h1>
+        <h1 className="text-5xl font-extrabold tracking-tight">Filmy</h1>
 
         <div className="actions">
           <Link href="/movies/new">Pridat film</Link>
@@ -100,7 +100,11 @@ export default function MoviesPage() {
               <div className="movie-actions">
                 <Link href={`/movies/${movie.id}`}>Detail</Link>
                 <Link href={`/movies/${movie.id}/edit`}>Upravit</Link>
-                <button type="button" onClick={() => deleteMovie(movie.id)}>
+                <button
+                  type="button"
+                  className="font-semibold"
+                  onClick={() => deleteMovie(movie.id)}
+                >
                   Smazat
                 </button>
               </div>
