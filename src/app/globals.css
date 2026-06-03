@@ -75,6 +75,11 @@ body {
   line-height: 1.1;
 }
 
+.movie-form-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+}
+
 .page p {
   color: var(--muted);
 }
@@ -292,10 +297,19 @@ button:hover,
 button {
   cursor: pointer;
   width: fit-content;
+  font-weight: 700;
 }
 
 button:hover {
   background: ghostwhite;
+}
+
+.movie-danger-button {
+  font-weight: 700;
+}
+
+.movie-submit-button {
+  font-weight: 700;
 }
 
 button:disabled {

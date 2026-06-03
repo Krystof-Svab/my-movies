@@ -71,7 +71,7 @@ export default function MovieDetailPage({ params }) {
       <div className="actions">
         <Link href={`/movies/${id}/edit`}>Upravit film</Link>
 
-        <button type="button" onClick={deleteMovie}>
+        <button type="button" className="movie-danger-button" onClick={deleteMovie}>
           Smazat film
         </button>
       </div>

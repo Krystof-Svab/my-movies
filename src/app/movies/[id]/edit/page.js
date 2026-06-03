@@ -78,7 +78,7 @@ export default function EditMoviePage({ params }) {
 
   return (
     <main className="page">
-      <h1>Upravit film</h1>
+      <h1 className="movie-form-title">Upravit film</h1>
 
       <form className="movie-form" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-field">
@@ -128,7 +128,7 @@ export default function EditMoviePage({ params }) {
           )}
         </div>
 
-        <button type="submit" disabled={isSubmitting}>
+        <button type="submit" className="movie-submit-button" disabled={isSubmitting}>
           {isSubmitting ? "Ukladam..." : "Ulozit zmeny"}
         </button>
       </form>
