@@ -93,8 +93,3 @@ npm.cmd run build
 - `/movies/new` - pridani filmu
 - `/movies/[id]` - detail filmu
 - `/movies/[id]/edit` - uprava filmu
-
-## Odevzdani
-
-Odevzdava se odkaz na GitHub/GitLab repozitar a tento navod ke spusteni.
-Projekt je vyvijen ve feature vetvi `feature/movies-crud`; pro splneni Git casti vytvorte Pull Request do vetve `main`.
